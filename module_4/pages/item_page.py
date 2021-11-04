@@ -19,7 +19,9 @@ class ItemPage(BasePage):
     def should_be_name_in_new_item_message(self):
         item_name_in_message = self.browser.find_element(*ItemPageLocators.NEW_ITEM_NAME)
         item_name = self.browser.find_element(*ItemPageLocators.ITEM_NAME)
-        assert (item_name_in_message.text).find(item_name.text) != -1
+        print(item_name.text)
+        print(item_name_in_message.text)
+        assert (item_name_in_message.text) == item_name.text
 
     def should_be_price_in_new_item_message(self):
         item_price = self.browser.find_element(*ItemPageLocators.ITEM_PRICE)

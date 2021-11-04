@@ -18,6 +18,6 @@ class ItemPageLocators():
     ITEM_PRICE = (By.CSS_SELECTOR, ".product_main p")
     BASKET_BUTTON = (By.CLASS_NAME, "btn-add-to-basket")
     MESSAGE = (By.ID, "messages")
-    NEW_ITEM_NAME = (By.CSS_SELECTOR, "#messages :first-child  > .alertinner ")
+    NEW_ITEM_NAME = (By.CSS_SELECTOR, "#messages :first-child  > .alertinner strong")
     NEW_ITEM_PRICE = (By.CSS_SELECTOR, "#messages :last-child  > .alertinner p strong")
 
