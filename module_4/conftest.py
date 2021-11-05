@@ -15,7 +15,6 @@ def language(request):
 
 
 
-
 @pytest.fixture(scope="function")
 def browser():
     print("\nstart browser for test..")
