@@ -1,8 +1,5 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import time
 
 
 class ProductPage(BasePage):
@@ -19,9 +16,7 @@ class ProductPage(BasePage):
     def should_be_name_in_new_item_message(self):
         item_name_in_message = self.browser.find_element(*ProductPageLocators.NEW_ITEM_NAME)
         item_name = self.browser.find_element(*ProductPageLocators.ITEM_NAME)
-        print(item_name.text)
-        print(item_name_in_message.text)
-        assert (item_name_in_message.text) == item_name.text
+        assert item_name_in_message.text == item_name.text
 
     def should_be_price_in_new_item_message(self):
         item_price = self.browser.find_element(*ProductPageLocators.ITEM_PRICE)
