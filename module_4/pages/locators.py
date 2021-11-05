@@ -4,9 +4,7 @@ from selenium.webdriver.common.by import By
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")  # каждый селектор — это пара: как искать и что искать.
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
-#
-# class MainPageLocators():
-#     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link") #каждый селектор — это пара: как искать и что искать.
+    BASKET_LINK = (By.CSS_SELECTOR,".btn-group a.btn-default")
 
 class LoginPageLocators():
     LOGIN_FORM = (By.ID,"login_form")
@@ -18,6 +16,7 @@ class LoginPageLocators():
     REGISTRATION_PASSWORD = (By.ID, "id_registration-password1")
     REGISTRATION_SUBMIT_PASSWORD = (By.ID,"id_registration-password2")
 
+
 class ProductPageLocators():
     ITEM_NAME = (By.CSS_SELECTOR, ".product_main h1")
     ITEM_PRICE = (By.CSS_SELECTOR, ".product_main p")
@@ -25,3 +24,7 @@ class ProductPageLocators():
     NEW_ITEM_NAME = (By.CSS_SELECTOR, "#messages :first-child  > .alertinner strong")
     NEW_ITEM_PRICE = (By.CSS_SELECTOR, "#messages :last-child  > .alertinner p strong")
 
+
+class BasketPageLocators():
+    BASKET_ITEMS = (By.CSS_SELECTOR, "basket-items")
+    BASKET_EMPTY_CONTENT = (By.CSS_SELECTOR, "#content_inner p")
