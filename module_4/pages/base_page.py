@@ -27,6 +27,10 @@ class BasePage():
         basket_link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
         basket_link.click()
 
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"
+
     def is_element_present(self, how, what):
         try:
             self.browser.find_element(how,what)
@@ -45,12 +49,10 @@ class BasePage():
         try:
             WebDriverWait(self.browser, timeout, 1, TimeoutException). \
                 until_not(EC.presence_of_element_located((how, what)))
-        #WebDriver ждёт 4 секунды и делает запросы каждую секунду
         except TimeoutException:
             return False
         return True
 
-    #прохождение капчи
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
         x = alert.text.split(" ")[2]
